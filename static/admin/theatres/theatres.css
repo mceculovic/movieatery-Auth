@@ -1,0 +1,36 @@
+.main-container{
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    
+}
+
+.main-container .container{
+    flex-grow: 0;
+    flex-basis: 50%;
+    
+}
+
+.err-label{
+    color: #ff0033;
+    font-size: 12px;
+}
+
+
+.navbar{
+    margin-bottom: 2rem;
+}
+
+.input-inline{
+    display: inline;
+}
+
+.input-id{
+    width: 5rem;
+}
+
+.label-inline {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+

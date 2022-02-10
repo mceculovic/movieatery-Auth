@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movies</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/admin/movies/movies.css" />
+  </head>
+  <body onload="init()">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/admin">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/admin/users">Users</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="/admin/movies">Movies</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/admin/actors">Actors</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/admin/directors">Directors</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/admin/theatres">Theatres</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/admin/showtimes">Showtimes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/admin/reservations">Reservations</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="logout" href="#">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <h1>Movies</h1>
+    <div class="main-container">
+      <div class="container">
+        <table class="table">
+          <thead class="thead-light">
+            <tr>
+              <th scope="col">id</th>
+              <th scope="col">title</th>
+              <th scope="col">release year</th>
+              <th scope="col">rating</th>
+              <th scope="col">description</th>
+              <th scope="col">movie length</th>
+              <th scope="col">genre</th>
+            </tr>
+          </thead>
+          <tbody id="tableData"></tbody>
+        </table>
+      </div>
+      <div class="container formContainer">
+        <div class="container">
+          <form enctype="multipart/form-data">
+            <div class="form-group">
+              <label for="title">Title:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="title"
+                placeholder="Enter title"
+              />
+              <label class="err-label" id="titleErr" for="title"></label>
+            </div>
+            <div class="form-group">
+              <label for="releaseYear">Release year:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="releaseYear"
+                placeholder="Enter release year"
+              />
+              <label
+                class="err-label"
+                id="releaseYearErr"
+                for="releaseYear"
+              ></label>
+            </div>
+            <div class="form-group">
+              <label for="rating">Rating:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="rating"
+                placeholder="Enter movie rating"
+              />
+              <label class="err-label" id="ratingErr" for="rating"></label>
+            </div>
+            <div class="form-group">
+              <label for="description">Description:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="description"
+                placeholder="Enter description"
+              />
+              <label
+                class="err-label"
+                id="descriptionErr"
+                for="description"
+              ></label>
+            </div>
+            <div class="form-group">
+              <label for="movieLength">Movie length:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="movieLength"
+                placeholder="Enter movie length"
+              />
+              <label
+                class="err-label"
+                id="movieLengthErr"
+                for="movieLength"
+              ></label>
+            </div>
+            <div class="form-group">
+              <label for="movieGenre">Genre:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="movieGenre"
+                disabled
+              />
+            </div>
+            <div class="form-group">
+              <label for="files">Movie image:</label>
+              <input type="file" multiple name="files" id="files" />
+            </div>
+            <button type="submit" class="btn btn-secondary" id="addMovie">
+              Add movie
+            </button>
+            <button type="submit" class="btn btn-secondary" id="updateMovie">
+              Update movie
+            </button>
+            <label class="label-inline" for="id"> with id: </label>
+            <input type="text" class="inline-input" id="id" disabled />
+          </form>
+        </div>
+      </div>
+    </div>
+    <br />
+    <h1>Genres</h1>
+    <div class="main-container">
+      <div class="container">
+        <table class="table">
+          <thead class="thead-light">
+            <tr>
+              <th scope="col">id</th>
+              <th scope="col">name</th>
+            </tr>
+          </thead>
+          <tbody id="genreData"></tbody>
+        </table>
+      </div>
+      <div class="container formContainer">
+        <form>
+          <div class="form-group">
+            <label for="genreName">Genre:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="genreName"
+              placeholder="Enter genre name"
+            />
+            <label class="err-label" id="genreNameErr" for="genreName"></label>
+          </div>
+          <button type="submit" class="btn btn-secondary" id="addGenre">
+            Add genre
+          </button>
+        </form>
+      </div>
+    </div>
+  </body>
+  <script src="/admin/movies/movies.js"></script>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/admin/login/login.css" />
+  </head>
+  <body onload="init()">
+    <div class="form-container">
+      <h1>Login</h1>
+      <form>
+        <div class="form-group">
+          <label for="email">Email address:</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            aria-describedby="emailHelp"
+            placeholder="Enter email"
+          />
+          <label class="err-label" id="emailErr" for="email"></label>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            placeholder="Password"
+          />
+          <label class="err-label" id="passwordErr" for="password"></label>
+        </div>
+        <button type="submit" class="btn btn-primary" id="loginBtn">
+          Login
+        </button>
+      </form>
+    </div>
+  </body>
+  <script
+    type="text/javascript"
+    src="https://unpkg.com/joi@17.5.0/dist/joi-browser.min.js"
+  ></script>
+  <script src="/admin/login/login.js"></script>
+</html>

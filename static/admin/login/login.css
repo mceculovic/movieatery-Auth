@@ -1,0 +1,18 @@
+
+
+.form-container{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10rem;
+    width: 30%;
+}
+
+h1{
+    text-align: center;
+    padding: 2rem;
+}
+
+.err-label{
+    color: #ff0033;
+    font-size: 12px;
+}

@@ -1,0 +1,24 @@
+
+.form-check-input {
+    margin-left: 0.8rem;
+}
+
+.formContainer{
+    display: flex;
+    flex-direction: row;
+    gap: 10rem;
+    
+}
+
+.formContainer .container{
+    flex-grow: 0;
+    flex-basis: 50%;
+    
+}
+
+.err-label{
+    color: #ff0033;
+    font-size: 12px;
+}
+
+

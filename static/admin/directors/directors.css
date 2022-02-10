@@ -1,0 +1,47 @@
+.form-check-inline{
+    display: inline;
+}
+
+.main-container{
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    
+}
+
+.boxed{
+    border-bottom: 1px solid black;
+    margin-bottom: 5rem;
+}
+
+
+.main-container .container{
+    flex-grow: 0;
+    flex-basis: 50%;
+    
+}
+
+.err-label{
+    color: #ff0033;
+    font-size: 12px;
+}
+
+
+
+
+.input-inline{
+    display: inline;
+    width: 5rem;
+}
+.label-inline {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+.form-control{
+    width: 30rem;
+}
+
+h2{
+    text-align: center;
+}

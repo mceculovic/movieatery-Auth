@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Showtimes</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/admin/showtimes/showtimes.css" />
+  </head>
+  <body onload="init()">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/admin">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/admin/users">Users</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/admin/movies">Movies</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/admin/actors">Actors</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/admin/directors">Directors</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/admin/theatres">Theatres</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="/admin/showtimes">Showtimes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/admin/reservations">Reservations</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="logout" href="#">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="main-container boxed">
+      <div class="boxed"></div>
+      <div class="container">
+        <h2>Movies</h2>
+        <table class="table">
+          <thead class="thead-light">
+            <tr>
+              <th scope="col">id</th>
+              <th scope="col">title</th>
+              <th scope="col">directors</th>
+              <th scope="col">actors</th>
+              <th scope="col">movie length</th>
+            </tr>
+          </thead>
+          <tbody id="tableData"></tbody>
+        </table>
+      </div>
+      <div class="container">
+        <h2>Theatres</h2>
+        <table class="table">
+          <thead class="thead-light">
+            <tr>
+              <th scope="col">id</th>
+              <th scope="col">name</th>
+              <th scope="col">street</th>
+              <th scope="col">city</th>
+              <th scope="col">phone</th>
+            </tr>
+          </thead>
+          <tbody id="tableData2"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="main-container">
+      <div class="container">
+        <h2>Showtimes</h2>
+        <table class="table">
+          <thead class="thead-light">
+            <tr>
+              <th scope="col">id</th>
+              <th scope="col">theatre</th>
+              <th scope="col">title</th>
+              <th scope="col">start date</th>
+              <th scope="col">time</th>
+              <th scope="col">ticket price</th>
+            </tr>
+          </thead>
+          <tbody id="tableData3"></tbody>
+        </table>
+      </div>
+      <div class="container">
+        <form>
+          <div class="form-group">
+            <label for="theatreId">Theatre:</label>
+            <select class="form-select form-select-sm" id="theatreId"></select>
+          </div>
+          <div class="form-group">
+            <label for="movieId">Movie:</label>
+            <select class="form-select form-select-sm" id="movieId"></select>
+          </div>
+          <div class="form-group">
+            <label for="startDate">Start date:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="startDate"
+              placeholder="Enter time"
+            />
+            <label class="err-label" id="startDateErr" for="startDate"></label>
+          </div>
+          <div class="form-group">
+            <label for="time">Time:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="timeId"
+              placeholder="Enter time"
+            />
+            <label class="err-label" id="timeErr" for="time"></label>
+          </div>
+          <div class="form-group">
+            <label for="ticketPrice">Ticket price:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="ticketPriceId"
+              placeholder="Enter ticket price"
+            />
+            <label
+              class="err-label"
+              id="ticketPriceErr"
+              for="ticketPriceId"
+            ></label>
+          </div>
+          <button type="submit" class="btn btn-secondary" id="addShowtime">
+            Add showtime
+          </button>
+          <button type="submit" class="btn btn-secondary" id="updateShowtime">
+            Update showtime
+          </button>
+          <label class="label-inline" for="id"> with id: </label>
+          <input type="text" class="inline-input" id="id" disabled />
+        </form>
+      </div>
+    </div>
+  </body>
+  <script src="/admin/showtimes/showtimes.js"></script>
+</html>

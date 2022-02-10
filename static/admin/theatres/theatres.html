@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Theatres</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/admin/theatres/theatres.css" />
+  </head>
+  <body onload="init()">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/admin">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/admin/users">Users</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/admin/movies">Movies</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/admin/actors">Actors</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/admin/directors">Directors</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="/admin/theatres">Theatres</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/admin/showtimes">Showtimes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/admin/reservations">Reservations</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="logout" href="#">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="main-container">
+      <div class="container">
+        <table class="table">
+          <thead class="thead-light">
+            <tr>
+              <th scope="col">id</th>
+              <th scope="col">name</th>
+              <th scope="col">street</th>
+              <th scope="col">city</th>
+              <th scope="col">phone</th>
+              <th scope="col">capacity</th>
+            </tr>
+          </thead>
+          <tbody id="tableData"></tbody>
+        </table>
+      </div>
+      <div class="container">
+        <table class="table">
+          <thead class="thead-light">
+            <tr>
+              <th scope="col">id</th>
+              <th scope="col">rows</th>
+              <th scope="col">numbers</th>
+              <th scope="col">theater</th>
+            </tr>
+          </thead>
+          <tbody id="tableData2"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="container formContainer main-container">
+      <div class="container">
+        <form enctype="multipart/form-data">
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              placeholder="Enter theatre name"
+            />
+            <label class="err-label" id="nameErr" for="name"></label>
+          </div>
+          <div class="form-group">
+            <label for="street">Street:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="street"
+              placeholder="Enter street name"
+            />
+            <label class="err-label" id="streetErr" for="street"></label>
+          </div>
+          <div class="form-group">
+            <label for="city">City:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="city"
+              placeholder="Enter city"
+            />
+            <label class="err-label" id="cityErr" for="city"></label>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="phone"
+              placeholder="Enter phone number"
+            />
+            <label class="err-label" id="phoneErr" for="phone"></label>
+          </div>
+          <div class="form-group">
+            <label for="capacity">Capacity:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="capacity"
+              placeholder="Enter capacity"
+            />
+            <label class="err-label" id="capacityErr" for="capacity"></label>
+          </div>
+          <div class="form-group">
+            <label for="files">Theatre image:</label>
+            <input type="file" multiple name="files" id="files" />
+          </div>
+          <button type="submit" class="btn btn-secondary" id="addTheatre">
+            Add theatre
+          </button>
+          <button type="submit" class="btn btn-secondary" id="updateTheatre">
+            Update theatre
+          </button>
+          <label class="label-inline" for="id"> with id: </label>
+          <input type="text" class="input-inline input-id" id="id" disabled />
+        </form>
+      </div>
+      <div class="container">
+        <form>
+          <div class="form-group">
+            <label for="theatreId">Theatre:</label>
+            <select class="form-select form-select-sm" id="theatreId"></select>
+          </div>
+          <div class="form-group">
+            <label for="rowId">Rows:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="rowId"
+              placeholder="Enter row"
+            />
+            <label class="err-label" id="rowErr" for="rowId"></label>
+          </div>
+          <div class="form-group">
+            <label for="numberId">Number of seats:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="numberId"
+              placeholder="Enter number of seat"
+            />
+            <label class="err-label" id="numberErr" for="numberId"></label>
+          </div>
+          <button type="submit" class="btn btn-secondary" id="addSeat">
+            Add seats
+          </button>
+          <button type="submit" class="btn btn-secondary" id="updateSeat">
+            Update seats
+          </button>
+          <label class="label-inline" for="seatId"> with id: </label>
+          <input
+            type="text"
+            class="input-inline input-id"
+            id="seatId"
+            disabled
+          />
+        </form>
+      </div>
+    </div>
+  </body>
+  <script src="/admin/theatres/theatres.js"></script>
+</html>

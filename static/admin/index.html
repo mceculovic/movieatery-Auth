@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/admin/main.css" />
+  </head>
+  <body onload="init()">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" href="/admin">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/admin/users">Users</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/admin/movies">Movies</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/admin/actors">Actors</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/admin/directors">Directors</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/admin/theatres">Theatres</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/admin/showtimes">Showtimes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/admin/reservations">Reservations</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" id="logout">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container grid">
+      <div class="card" style="width: 18rem">
+        <img src="./admin/images/users.jpg" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">Users</h5>
+          <p class="card-text">Add, remove or change users.</p>
+          <a href="/admin/users" class="btn btn-primary">Go to users</a>
+        </div>
+      </div>
+
+      <div class="card" style="width: 18rem">
+        <img src="./admin/images/movies.jpg" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">Movies</h5>
+          <p class="card-text">Add, remove or change movies.</p>
+          <a href="/admin/movies" class="btn btn-primary">Go to movies</a>
+        </div>
+      </div>
+
+      <div class="card" style="width: 18rem">
+        <img src="./admin/images/actors.jpg" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">Actors</h5>
+          <p class="card-text">
+            Add, remove or change actors. Add and remove actors from movies.
+          </p>
+          <a href="/admin/actors" class="btn btn-primary">Go to actors</a>
+        </div>
+      </div>
+
+      <div class="card" style="width: 18rem">
+        <img
+          src="./admin/images/directors.jpg"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title">Directors</h5>
+          <p class="card-text">
+            Add, remove or change directors. Add and remove directors from
+            movies.
+          </p>
+          <a href="/admin/directors" class="btn btn-primary">Go to directors</a>
+        </div>
+      </div>
+
+      <div class="card" style="width: 18rem">
+        <img src="./admin/images/theatres.jpg" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">Theatres</h5>
+          <p class="card-text">Add, remove or change theatres.</p>
+          <a href="/admin/theatres" class="btn btn-primary">Go to theatres</a>
+        </div>
+      </div>
+
+      <div class="card" style="width: 18rem">
+        <img
+          src="./admin/images/showtimes.jpg"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title">Showtimes</h5>
+          <p class="card-text">Add and remove movies from theatres.</p>
+          <a href="/admin/showtimes" class="btn btn-primary">Go to showtimes</a>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem">
+        <img
+          src="./admin/images/reservations.jpg"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title">Reservations</h5>
+          <p class="card-text">Add, remove or change reservations.</p>
+          <a href="/admin/reservations" class="btn btn-primary"
+            >Go to reservations</a
+          >
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="/admin/index.js"></script>
+</html>
