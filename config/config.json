@@ -14,19 +14,12 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "disxtceyxvwjkz",
-    "password": "32a14e070cd0b4666daeacb5e99b0b97cf1b526e8637bf6aa23b25e634e43cb9",
-    "database": "dfe35nnu9mnb2",
-    "host": "ec2-54-195-76-73.eu-west-1.compute.amazonaws.com",
-    "port": 5432,
-    "dialect": "postgres",
-    "logging": false,
-    "sll": true,
-    "dialectOptions": {
-      "ssl": {
-        "require": true,
-        "rejectUnauthorized": false
-      }
-    }
+    "username": "sql11471708",
+    "password": "5R8kHUky4W",
+    "database": "sql11471708",
+    "host": "sql11.freemysqlhosting.net",
+    "port": 3306,
+    "dialect": "mysql",
+    "logging": false
   }
 }
