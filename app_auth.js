@@ -103,7 +103,7 @@ function validateLogin(user){
     return schema.validate(user);
 }
 
-const port = 9000;
+const port = process.env.PORT || 9000;
 
 app.listen(port, async () => {
     console.log("Auth service listening on port " + port + "...");
