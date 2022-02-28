@@ -8,8 +8,13 @@ require('dotenv').config();
 
 const app = express();
 
+const corsOptions = {
+    origin: 'https://movieatery.herokuapp.com',
+    optionsSuccessStatus: 200,
+};
+
 app.use(express.json());
-app.use(cors());
+app.use(cors(corsOptions));
 
 app.post('/register', async (req, res) => {
 
