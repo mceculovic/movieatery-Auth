@@ -2,19 +2,13 @@ const express = require('express');
 const { sequelize, User } = require('./models');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const cors = require('cors');
 const Joi = require('joi');
 require('dotenv').config();
 
 const app = express();
 
-const corsOptions = {
-    origin: 'https://movieatery.herokuapp.com',
-    optionsSuccessStatus: 200,
-};
 
 app.use(express.json());
-app.use(cors(corsOptions));
 
 app.post('/register', async (req, res) => {
 
