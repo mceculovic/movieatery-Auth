@@ -8,13 +8,8 @@ require('dotenv').config();
 
 const app = express();
 
-
-const corsOptions = {
-    origin: '*',
-    optionsSuccessStatus: 200,
-};
 app.use(express.json());
-app.use(cors(corsOptions));
+app.use(cors());
 
 app.post('/register', async (req, res) => {
 
