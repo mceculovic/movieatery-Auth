@@ -3,12 +3,14 @@ const { sequelize, User } = require('./models');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const Joi = require('joi');
+const cors = require('cors');
 require('dotenv').config();
 
 const app = express();
 
 
 app.use(express.json());
+app.use(cors());
 
 app.post('/register', async (req, res) => {
 
