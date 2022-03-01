@@ -9,7 +9,7 @@ const app = express();
 const cors = require('cors');
 
 const corsOptions = {
-    origin: '*',
+    origin: 'https://movieatery.herokuapp.com/signup',
     optionsSuccessStatus: 200,
 };
 
