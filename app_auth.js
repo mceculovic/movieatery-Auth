@@ -58,9 +58,6 @@ app.post('/register', async (req, res) => {
 
 app.post('/login', async (req, res) => {
 
-    res.header('Access-Control-Allow-Origin', 'https://movieatery.herokuapp.com');
-    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
-    res.header('Access-Control-Allow-Headers', 'Content-Type');
 
     let {error, value} = validateLogin(req.body);
 
