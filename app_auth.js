@@ -5,7 +5,6 @@ const jwt = require('jsonwebtoken');
 const Joi = require('joi');
 require('dotenv').config();
 
-const app = express();
 const cors = require('cors');
 
 const corsOptions = {
@@ -13,9 +12,11 @@ const corsOptions = {
     optionsSuccessStatus: 200,
 };
 
-app.use(cors(corsOptions));
+const app = express();
+
 
 app.use(express.json());
+app.use(cors(corsOptions));
 
 app.post('/register', async (req, res) => {
 
@@ -49,7 +50,7 @@ app.post('/register', async (req, res) => {
             isAdmin: newUser.isAdmin,
         }
         const token = jwt.sign(userToken, process.env.ACCESS_TOKEN_SECRET);
-        res.send({ token: token });
+        res.json({ token: token });
     }catch(err){
         res.status(500).json(err);
     }
@@ -83,7 +84,7 @@ app.post('/login', async (req, res) => {
 
         const token = jwt.sign(object, process.env.ACCESS_TOKEN_SECRET);
 
-        res.status(200).send({ token: token});
+        res.status(200).json({ token: token});
     }else{
         res.status(400).send({msg: "Invalid credentials!"});
     }
