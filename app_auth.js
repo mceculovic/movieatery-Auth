@@ -6,14 +6,18 @@ const Joi = require('joi');
 require('dotenv').config();
 
 const app = express();
+const cors = require('cors');
 
-const corsMidl = require('./middlewares/cors');
+const corsOptions = {
+    origin: '*',
+    optionsSuccessStatus: 200,
+};
 
-
+app.use(cors(corsOptions));
 
 app.use(express.json());
 
-app.post('/register', corsMidl,  async (req, res) => {
+app.post('/register', async (req, res) => {
 
     let {error, value} = validate(req.body);
     if(error){
@@ -51,7 +55,7 @@ app.post('/register', corsMidl,  async (req, res) => {
     }
 });
 
-app.post('/login', corsMidl,  async (req, res) => {
+app.post('/login', async (req, res) => {
 
     let {error, value} = validateLogin(req.body);
 
@@ -79,7 +83,7 @@ app.post('/login', corsMidl,  async (req, res) => {
 
         const token = jwt.sign(object, process.env.ACCESS_TOKEN_SECRET);
 
-        res.json({ token: token});
+        res.status(200).json({ token: token});
     }else{
         res.status(400).send({msg: "Invalid credentials!"});
     }
