@@ -3,22 +3,17 @@ const { sequelize, User } = require('./models');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const Joi = require('joi');
-const cors = require('cors');
 require('dotenv').config();
 
 const app = express();
 
-const corsOptions ={
-    origin:'*', 
-    credentials:true,           
-    optionSuccessStatus:200,
- }
+const corsMidl = require('./middlewares/cors');
+
 
 
 app.use(express.json());
-app.use(cors(corsOptions));
 
-app.post('/register', async (req, res) => {
+app.post('/register', corsMidl,  async (req, res) => {
 
     let {error, value} = validate(req.body);
     if(error){
@@ -56,7 +51,7 @@ app.post('/register', async (req, res) => {
     }
 });
 
-app.post('/login', async (req, res) => {
+app.post('/login', corsMidl,  async (req, res) => {
 
     let {error, value} = validateLogin(req.body);
 
