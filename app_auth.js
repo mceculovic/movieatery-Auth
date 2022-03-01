@@ -49,7 +49,7 @@ app.post('/register', async (req, res) => {
             isAdmin: newUser.isAdmin,
         }
         const token = jwt.sign(userToken, process.env.ACCESS_TOKEN_SECRET);
-        res.json({ token: token });
+        res.send({ token: token });
     }catch(err){
         res.status(500).json(err);
     }
@@ -83,7 +83,7 @@ app.post('/login', async (req, res) => {
 
         const token = jwt.sign(object, process.env.ACCESS_TOKEN_SECRET);
 
-        res.status(200).json({ token: token});
+        res.status(200).send({ token: token});
     }else{
         res.status(400).send({msg: "Invalid credentials!"});
     }
